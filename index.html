@@ -72,24 +72,28 @@
 
         .dish-carousel-wrapper {
             width: 100%;
-            overflow-x: auto;
-            padding: 1rem 5% 4rem;
-            scrollbar-width: none;
-            /* Firefox */
-            -webkit-overflow-scrolling: touch;
-            /* smooth scrolling on iOS */
-            scroll-snap-type: x mandatory;
-        }
-
-        .dish-carousel-wrapper::-webkit-scrollbar {
-            display: none;
-            /* Safari and Chrome */
+            overflow: hidden;
+            padding: 1rem 0 4rem;
         }
 
         .dish-carousel {
             display: flex;
             gap: 2.5rem;
             width: max-content;
+            animation: scrollCarousel 25s linear infinite;
+        }
+
+        .dish-carousel:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollCarousel {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-1920px - 15rem)); /* 6 items * 320px + 6 items * 2.5rem */
+            }
         }
 
         .dish-card {
@@ -103,7 +107,6 @@
             cursor: pointer;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            scroll-snap-align: start;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -324,6 +327,93 @@
         <h2 class="section-title">Signature Dishes</h2>
         <div class="dish-carousel-wrapper">
             <div class="dish-carousel">
+                <!-- Original set -->
+                <div class="dish-card">
+                    <img src="images/dish_biryani_1773443363297.png" alt="Chicken Biryani" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>ROYAL CHICKEN BIRYANI</h3>
+                        <p>₹320</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/dish_butter_chicken_1773443377735.png" alt="Butter Chicken" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>CLASSIC BUTTER CHICKEN</h3>
+                        <p>₹350</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/dish_paneer_1773443394410.png" alt="Paneer Tikka" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>TANDOORI PANEER TIKKA</h3>
+                        <p>₹280</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/dish_paneer_1773443394410.png" alt="Paneer Butter Masala" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>PANEER BUTTER MASALA</h3>
+                        <p>₹300</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/chole kulchey.png " alt="Spiced Lassi" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>Chole Kulchey</h3>
+                        <p>₹250</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/gulab jamun delight.png" alt="Gulab Jamun" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>GULAB JAMUN DELIGHT</h3>
+                        <p>₹90</p>
+                    </div>
+                </div>
+                <!-- Duplicate set for infinite scroll -->
+                <div class="dish-card">
+                    <img src="images/dish_biryani_1773443363297.png" alt="Chicken Biryani" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>ROYAL CHICKEN BIRYANI</h3>
+                        <p>₹320</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/dish_butter_chicken_1773443377735.png" alt="Butter Chicken" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>CLASSIC BUTTER CHICKEN</h3>
+                        <p>₹350</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/dish_paneer_1773443394410.png" alt="Paneer Tikka" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>TANDOORI PANEER TIKKA</h3>
+                        <p>₹280</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/dish_paneer_1773443394410.png" alt="Paneer Butter Masala" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>PANEER BUTTER MASALA</h3>
+                        <p>₹300</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/chole kulchey.png " alt="Spiced Lassi" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>Chole Kulchey</h3>
+                        <p>₹250</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/gulab jamun delight.png" alt="Gulab Jamun" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>GULAB JAMUN DELIGHT</h3>
+                        <p>₹90</p>
+                    </div>
+                </div>
+                <!-- Second Duplicate set to ensure no blank spaces on ultrawide monitors -->
                 <div class="dish-card">
                     <img src="images/dish_biryani_1773443363297.png" alt="Chicken Biryani" class="dish-bg">
                     <div class="dish-overlay">
