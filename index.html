@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Spice Kitchen | Authentic Flavors</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(17, 17, 17, 0.75), rgba(17, 17, 17, 0.9)), url('images/hero_bg_1773443229799.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            animation: fadeIn 1.2s ease forwards;
+        }
+
+        .about-preview {
+            background-color: var(--bg-light);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 2px solid var(--accent-color);
+            filter: brightness(0.85);
+            transition: all 0.5s ease;
+        }
+
+        .about-image:hover img {
+            filter: brightness(1);
+            transform: scale(1.02);
+        }
+
+        .featured-dishes h2.section-title {
+            padding-inline: 5%;
+        }
+
+        .dish-carousel-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            padding: 1rem 5% 4rem;
+            scrollbar-width: none;
+            /* Firefox */
+            -webkit-overflow-scrolling: touch;
+            /* smooth scrolling on iOS */
+            scroll-snap-type: x mandatory;
+        }
+
+        .dish-carousel-wrapper::-webkit-scrollbar {
+            display: none;
+            /* Safari and Chrome */
+        }
+
+        .dish-carousel {
+            display: flex;
+            gap: 2.5rem;
+            width: max-content;
+        }
+
+        .dish-card {
+            width: 320px;
+            height: 450px;
+            border-radius: 4px;
+            /* Premium subtle rounding */
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            scroll-snap-align: start;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dish-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid var(--accent-color);
+            opacity: 0;
+            border-radius: 4px;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: scale(0.95);
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .dish-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        .dish-card:hover::after {
+            opacity: 0.5;
+            transform: scale(1);
+        }
+
+        .dish-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease, filter 0.5s ease;
+            filter: brightness(0.65) contrast(1.1);
+        }
+
+        .dish-card:hover .dish-bg {
+            transform: scale(1.08);
+            /* Zoom on hover */
+            filter: brightness(0.75) contrast(1.1);
+        }
+
+        .dish-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, rgba(17, 17, 17, 0.95) 0%, rgba(17, 17, 17, 0.7) 40%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            z-index: 2;
+        }
+
+        .dish-overlay::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin-bottom: 1.2rem;
+            transition: width 0.4s ease;
+        }
+
+        .dish-card:hover .dish-overlay::before {
+            width: 80px;
+        }
+
+        .dish-overlay h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            transition: transform 0.4s ease;
+        }
+
+        .dish-overlay p {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.4s ease;
+        }
+
+        .dish-card:hover .dish-overlay p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+
+        .testimonials {
+            background-color: var(--bg-light);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-color);
+            padding: 2.5rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-color);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: rgba(212, 175, 55, 0.2);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.9)), url('images/restaurant_interior_1773443412893.png') center/cover fixed;
+            padding: 8rem 5%;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-inline: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html">
+                <h2>Royal <span>Spice</span></h2>
+            </a>
+        </div>
+        <div class="menu-toggle">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="menu.html" class="nav-item">Menu</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+            <a href="contact.html" class="btn btn-primary" style="margin-left: 1rem;">Reserve Table</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Royal Spice Kitchen</h1>
+            <p>Authentic Flavors, Royal Experience</p>
+            <a href="menu.html" class="btn btn-primary fade-in" style="animation-delay: 0.3s;">View Menu</a>
+        </div>
+    </section>
+
+    <section class="about-preview">
+        <div class="about-container">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left; margin-inline: 0;">A Taste of Royalty</h2>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem;">Step into a world of
+                    culinary excellence at Royal Spice Kitchen. We bring you authentic recipes from the royal kitchens
+                    of India, crafted with passion and the finest ingredients.</p>
+                <a href="about.html" class="btn btn-outline">Our Story</a>
+            </div>
+            <div class="about-image">
+                <img src="images/restaurant_interior_1773443412893.png" alt="Restaurant Interior">
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-dishes" style="padding-inline: 0; overflow: hidden;">
+        <h2 class="section-title">Signature Dishes</h2>
+        <div class="dish-carousel-wrapper">
+            <div class="dish-carousel">
+                <div class="dish-card">
+                    <img src="images/dish_biryani_1773443363297.png" alt="Chicken Biryani" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>ROYAL CHICKEN BIRYANI</h3>
+                        <p>₹320</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/dish_butter_chicken_1773443377735.png" alt="Butter Chicken" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>CLASSIC BUTTER CHICKEN</h3>
+                        <p>₹350</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/dish_paneer_1773443394410.png" alt="Paneer Tikka" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>TANDOORI PANEER TIKKA</h3>
+                        <p>₹280</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/dish_paneer_1773443394410.png" alt="Paneer Butter Masala" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>PANEER BUTTER MASALA</h3>
+                        <p>₹300</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/chole kulchey.png " alt="Spiced Lassi" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>Chole Kulchey</h3>
+                        <p>₹250</p>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <img src="images/gulab jamun delight.png" alt="Gulab Jamun" class="dish-bg">
+                    <div class="dish-overlay">
+                        <h3>GULAB JAMUN DELIGHT</h3>
+                        <p>₹90</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="section-title">Guest Experiences</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Absolutely the best Indian restaurant in Hyderabad. The flavors are
+                    incredibly authentic, and the ambiance makes you feel like royalty."</p>
+                <div class="testimonial-author">- Rahul Sharma</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"We celebrated our anniversary here and it was perfect. The service, the
+                    dark and elegant decor, and the incredible food."</p>
+                <div class="testimonial-author">- Priya Desai</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The Butter Chicken is out of this world. You can tell they use premium
+                    ingredients. A 5-star dining experience."</p>
+                <div class="testimonial-author">- Amit Kumar</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Experience the Magic</h2>
+        <p>Join us for an unforgettable culinary journey. Book your table in advance.</p>
+        <a href="contact.html" class="btn btn-primary">Reserve a Table</a>
+    </section>
+
+    <!-- Footer ... -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Royal <span>Spice</span></h3>
+                <p>Authentic Flavors, Royal Experience.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <li><a href="index.html" style="color: var(--text-muted); transition: color 0.3s;">Home</a></li>
+                    <li><a href="menu.html" style="color: var(--text-muted); transition: color 0.3s;">Menu</a></li>
+                    <li><a href="about.html" style="color: var(--text-muted); transition: color 0.3s;">About Us</a></li>
+                    <li><a href="contact.html" style="color: var(--text-muted); transition: color 0.3s;">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p>Road No. 12, Banjara Hills, Hyderabad, India</p>
+                <p>+91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Royal Spice Kitchen. All rights reserved.</div>
+    </footer>
+
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">💬</a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

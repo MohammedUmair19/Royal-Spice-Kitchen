@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Royal Spice Kitchen</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.9)), url('images/dish_biryani_1773443363297.png') center/cover;
+            padding: 12rem 5% 6rem;
+            text-align: center;
+        }
+        .page-title {
+            font-size: 3.5rem;
+            color: var(--text-main);
+            animation: fadeIn 0.8s ease;
+        }
+        
+        .menu-section { padding: 4rem 5%; }
+        .menu-category { margin-bottom: 4rem; }
+        .menu-category-title {
+            color: var(--accent-color); font-size: 2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 1rem; margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .menu-items { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        @media (min-width: 768px) {
+            .menu-items { grid-template-columns: 1fr 1fr; gap: 3rem; }
+        }
+        .menu-item { display: flex; flex-direction: column; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px dashed rgba(255,255,255,0.1); margin-bottom: 0.5rem; padding-bottom: 0.5rem; }
+        .item-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; color: var(--text-main); }
+        .item-price { color: var(--accent-color); font-weight: 600; font-size: 1.1rem; }
+        .item-desc { color: var(--text-muted); font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html"><h2>Royal <span>Spice</span></h2></a>
+        </div>
+        <div class="menu-toggle">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="menu.html" class="nav-item">Menu</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+            <a href="contact.html" class="btn btn-primary" style="margin-left: 1rem;">Reserve Table</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">Our Menu</h1>
+    </header>
+
+    <section class="menu-section">
+        <div class="menu-category">
+            <h2 class="menu-category-title">Starters</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Tandoori Paneer Tikka</span>
+                        <span class="item-price">₹280</span>
+                    </div>
+                    <p class="item-desc">Cottage cheese marinated in yogurt and spices, charred in a clay oven.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Chicken Seekh Kebab</span>
+                        <span class="item-price">₹320</span>
+                    </div>
+                    <p class="item-desc">Minced chicken with aromatic spices cooked over glowing charcoal.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h2 class="menu-category-title">Main Course</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Classic Butter Chicken</span>
+                        <span class="item-price">₹350</span>
+                    </div>
+                    <p class="item-desc">Succulent chicken pieces in a rich, creamy tomato and cashew curry.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Mutton Rogan Josh</span>
+                        <span class="item-price">₹480</span>
+                    </div>
+                    <p class="item-desc">Tender mutton braised with a gravy flavored with garlic, ginger and aromatic spices.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h2 class="menu-category-title">Biryani Specials</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Royal Chicken Biryani</span>
+                        <span class="item-price">₹320</span>
+                    </div>
+                    <p class="item-desc">Aromatic basmati rice cooked with tender chicken and secret royal spices.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Hyderabadi Mutton Biryani</span>
+                        <span class="item-price">₹450</span>
+                    </div>
+                    <p class="item-desc">Authentic dum biryani with tender mutton pieces and fragrant saffron rice.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h2 class="menu-category-title">Desserts</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Gulab Jamun</span>
+                        <span class="item-price">₹150</span>
+                    </div>
+                    <p class="item-desc">Deep fried milk dumplings soaked in rose and cardamom syrup.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-category">
+            <h2 class="menu-category-title">Drinks</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Mango Lassi</span>
+                        <span class="item-price">₹120</span>
+                    </div>
+                    <p class="item-desc">Refreshing yogurt-based sweet drink with fresh mango pulp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Royal <span>Spice</span></h3>
+                <p>Authentic Flavors, Royal Experience.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <li><a href="index.html" style="color: var(--text-muted); transition: color 0.3s;">Home</a></li>
+                    <li><a href="menu.html" style="color: var(--text-muted); transition: color 0.3s;">Menu</a></li>
+                    <li><a href="about.html" style="color: var(--text-muted); transition: color 0.3s;">About Us</a></li>
+                    <li><a href="contact.html" style="color: var(--text-muted); transition: color 0.3s;">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p>Road No. 12, Banjara Hills, Hyderabad, India</p>
+                <p>+91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Royal Spice Kitchen. All rights reserved.</div>
+    </footer>
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">💬</a>
+    <script src="script.js"></script>
+</body>
+</html>
+

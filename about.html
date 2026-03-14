@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Royal Spice Kitchen</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.9)), url('images/restaurant_interior_1773443412893.png') center/cover;
+            padding: 12rem 5% 6rem;
+            text-align: center;
+        }
+        .page-title {
+            font-size: 3.5rem;
+            color: var(--text-main);
+            animation: fadeIn 0.8s ease;
+        }
+
+        .about-story {
+            display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem;
+        }
+        @media (min-width: 768px) {
+            .about-story { grid-template-columns: 1fr 1fr; }
+        }
+
+        .about-image img {
+            width: 100%; border-radius: 8px; border: 2px solid var(--accent-color);
+        }
+
+        .experience-badge {
+            display: inline-block; padding: 1.5rem 2.5rem; background: var(--bg-light); border-left: 4px solid var(--accent-color);
+            margin-top: 2rem; font-family: 'Playfair Display', serif; font-size: 1.5rem;
+        }
+
+        .chef-section {
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html"><h2>Royal <span>Spice</span></h2></a>
+        </div>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="menu.html" class="nav-item">Menu</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+            <a href="contact.html" class="btn btn-primary" style="margin-left: 1rem;">Reserve Table</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">Our Story</h1>
+    </header>
+
+    <section>
+        <div class="about-story">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left; margin-inline: 0;">A Heritage of Flavors</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem;">
+                    Royal Spice Kitchen started with a simple belief: that food should not just satisfy hunger, but tell a story. Born out of a passion for authentic Indian culinary traditions, we have spent years perfecting dishes that trace their origins back to the royal kitchens of ancient India.
+                </p>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">
+                    Our commitment is to quality, using only the freshest ingredients and hand-ground spices to deliver an experience that truly feels like a royal feast.
+                </p>
+                <div class="experience-badge">
+                    Over 15 Years of Culinary Excellence
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="images/restaurant_interior_1773443412893.png" alt="Interior">
+            </div>
+        </div>
+    </section>
+
+    <section class="chef-section">
+        <h2 class="section-title">Meet Our Executive Chef</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
+            Chef Raj at Royal Spice Kitchen brings two decades of experience working in premier 5-star hotels across India. His vision is simple: to preserve the authenticity of traditional recipes while presenting them with modern elegance. Chef Raj oversees every dish that leaves the kitchen, ensuring that the royal standard is always maintained.
+        </p>
+        <a href="menu.html" class="btn btn-outline">Explore His Creations</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Royal <span>Spice</span></h3>
+                <p>Authentic Flavors, Royal Experience.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <li><a href="index.html" style="color: var(--text-muted); transition: color 0.3s;">Home</a></li>
+                    <li><a href="menu.html" style="color: var(--text-muted); transition: color 0.3s;">Menu</a></li>
+                    <li><a href="about.html" style="color: var(--text-muted); transition: color 0.3s;">About Us</a></li>
+                    <li><a href="contact.html" style="color: var(--text-muted); transition: color 0.3s;">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p>Road No. 12, Banjara Hills, Hyderabad, India</p>
+                <p>+91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Royal Spice Kitchen. All rights reserved.</div>
+    </footer>
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">💬</a>
+    <script src="script.js"></script>
+</body>
+</html>
+
