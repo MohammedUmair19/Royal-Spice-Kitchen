@@ -19,6 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 spans[2].style.transform = 'none';
             }
         });
+
+        // Close mobile menu when a link is clicked
+        const navItemsList = document.querySelectorAll('.nav-links .nav-item, .nav-links .btn');
+        navItemsList.forEach(item => {
+            item.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    menuToggle.click(); // Trigger the toggle logic to close
+                }
+            });
+        });
     }
 
     // Sticky navbar on scroll
@@ -69,4 +79,52 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add('active');
         }
     });
+
+    // Intersection Observer for scroll animations
+    const fadeElements = document.querySelectorAll('.fade-in-section');
+    if (fadeElements.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: Unobserve if you only want it to fade in once
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
+    // Menu category filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const menuItems = document.querySelectorAll('.menu-item-card');
+
+    if (filterBtns.length > 0 && menuItems.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                menuItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'flex';
+                        // Trigger reflow for fresh animation
+                        item.style.animation = 'none';
+                        item.offsetHeight; /* trigger reflow */
+                        item.style.animation = null; 
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
 });

@@ -61,23 +61,43 @@
         <h1 class="page-title">Our Menu</h1>
     </header>
 
-    <section class="menu-section">
+    <section class="menu-section fade-in-section">
+        <div class="menu-filters">
+            <button class="filter-btn active" data-filter="all">All Items</button>
+            <button class="filter-btn" data-filter="veg">Vegetarian</button>
+            <button class="filter-btn" data-filter="non-veg">Non-Vegetarian</button>
+            <button class="filter-btn" data-filter="dessert">Desserts</button>
+            <button class="filter-btn" data-filter="drink">Drinks</button>
+        </div>
+
         <div class="menu-category">
             <h2 class="menu-category-title">Starters</h2>
             <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-header">
-                        <span class="item-name">Tandoori Paneer Tikka</span>
-                        <span class="item-price">₹280</span>
+                <div class="menu-item-card" data-category="veg">
+                    <div class="menu-item-img-container">
+                        <img src="images/dish_paneer_1773443394410.png" alt="Tandoori Paneer Tikka" class="menu-item-img" loading="lazy">
+                        <span class="diet-tag diet-veg">Veg</span>
                     </div>
-                    <p class="item-desc">Cottage cheese marinated in yogurt and spices, charred in a clay oven.</p>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Tandoori Paneer Tikka</span>
+                            <span class="menu-item-price">₹280</span>
+                        </div>
+                        <p class="menu-item-desc">Cottage cheese marinated in yogurt and spices, charred in a clay oven.</p>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <div class="item-header">
-                        <span class="item-name">Chicken Seekh Kebab</span>
-                        <span class="item-price">₹320</span>
+                <div class="menu-item-card" data-category="non-veg">
+                    <div class="menu-item-img-container">
+                        <img src="images/dish_biryani_1773443363297.png" alt="Chicken Seekh Kebab" class="menu-item-img" loading="lazy">
+                        <span class="diet-tag diet-non-veg">Non-Veg</span>
                     </div>
-                    <p class="item-desc">Minced chicken with aromatic spices cooked over glowing charcoal.</p>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Chicken Seekh Kebab</span>
+                            <span class="menu-item-price">₹320</span>
+                        </div>
+                        <p class="menu-item-desc">Minced chicken with aromatic spices cooked over glowing charcoal.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,19 +105,31 @@
         <div class="menu-category">
             <h2 class="menu-category-title">Main Course</h2>
             <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-header">
-                        <span class="item-name">Classic Butter Chicken</span>
-                        <span class="item-price">₹350</span>
+                <div class="menu-item-card" data-category="non-veg">
+                    <div class="menu-item-img-container">
+                        <img src="images/dish_butter_chicken_1773443377735.png" alt="Classic Butter Chicken" class="menu-item-img" loading="lazy">
+                        <span class="diet-tag diet-non-veg">Non-Veg</span>
                     </div>
-                    <p class="item-desc">Succulent chicken pieces in a rich, creamy tomato and cashew curry.</p>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Classic Butter Chicken</span>
+                            <span class="menu-item-price">₹350</span>
+                        </div>
+                        <p class="menu-item-desc">Succulent chicken pieces in a rich, creamy tomato and cashew curry.</p>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <div class="item-header">
-                        <span class="item-name">Mutton Rogan Josh</span>
-                        <span class="item-price">₹480</span>
+                <div class="menu-item-card" data-category="non-veg">
+                    <div class="menu-item-img-container">
+                        <img src="images/dish_biryani_1773443363297.png" alt="Mutton Rogan Josh" class="menu-item-img" loading="lazy">
+                        <span class="diet-tag diet-non-veg">Non-Veg</span>
                     </div>
-                    <p class="item-desc">Tender mutton braised with a gravy flavored with garlic, ginger and aromatic spices.</p>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Mutton Rogan Josh</span>
+                            <span class="menu-item-price">₹480</span>
+                        </div>
+                        <p class="menu-item-desc">Tender mutton braised with a gravy flavored with garlic, ginger and aromatic spices.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,19 +137,31 @@
         <div class="menu-category">
             <h2 class="menu-category-title">Biryani Specials</h2>
             <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-header">
-                        <span class="item-name">Royal Chicken Biryani</span>
-                        <span class="item-price">₹320</span>
+                <div class="menu-item-card" data-category="non-veg">
+                    <div class="menu-item-img-container">
+                        <img src="images/dish_biryani_1773443363297.png" alt="Royal Chicken Biryani" class="menu-item-img" loading="lazy">
+                        <span class="diet-tag diet-non-veg">Non-Veg</span>
                     </div>
-                    <p class="item-desc">Aromatic basmati rice cooked with tender chicken and secret royal spices.</p>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Royal Chicken Biryani</span>
+                            <span class="menu-item-price">₹320</span>
+                        </div>
+                        <p class="menu-item-desc">Aromatic basmati rice cooked with tender chicken and secret royal spices.</p>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <div class="item-header">
-                        <span class="item-name">Hyderabadi Mutton Biryani</span>
-                        <span class="item-price">₹450</span>
+                <div class="menu-item-card" data-category="non-veg">
+                    <div class="menu-item-img-container">
+                        <img src="images/dish_biryani_1773443363297.png" alt="Hyderabadi Mutton Biryani" class="menu-item-img" loading="lazy">
+                        <span class="diet-tag diet-non-veg">Non-Veg</span>
                     </div>
-                    <p class="item-desc">Authentic dum biryani with tender mutton pieces and fragrant saffron rice.</p>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Hyderabadi Mutton Biryani</span>
+                            <span class="menu-item-price">₹450</span>
+                        </div>
+                        <p class="menu-item-desc">Authentic dum biryani with tender mutton pieces and fragrant saffron rice.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -125,12 +169,18 @@
         <div class="menu-category">
             <h2 class="menu-category-title">Desserts</h2>
             <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-header">
-                        <span class="item-name">Gulab Jamun</span>
-                        <span class="item-price">₹150</span>
+                <div class="menu-item-card" data-category="dessert">
+                    <div class="menu-item-img-container">
+                        <img src="images/gulab jamun delight.png" alt="Gulab Jamun" class="menu-item-img" loading="lazy">
+                        <span class="diet-tag diet-veg">Veg</span>
                     </div>
-                    <p class="item-desc">Deep fried milk dumplings soaked in rose and cardamom syrup.</p>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Gulab Jamun</span>
+                            <span class="menu-item-price">₹150</span>
+                        </div>
+                        <p class="menu-item-desc">Deep fried milk dumplings soaked in rose and cardamom syrup.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -138,12 +188,18 @@
         <div class="menu-category">
             <h2 class="menu-category-title">Drinks</h2>
             <div class="menu-items">
-                <div class="menu-item">
-                    <div class="item-header">
-                        <span class="item-name">Mango Lassi</span>
-                        <span class="item-price">₹120</span>
+                <div class="menu-item-card" data-category="drink">
+                    <div class="menu-item-img-container">
+                        <img src="images/chole kulchey.png " alt="Mango Lassi" class="menu-item-img" loading="lazy">
+                        <span class="diet-tag diet-veg">Veg</span>
                     </div>
-                    <p class="item-desc">Refreshing yogurt-based sweet drink with fresh mango pulp.</p>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Mango Lassi</span>
+                            <span class="menu-item-price">₹120</span>
+                        </div>
+                        <p class="menu-item-desc">Refreshing yogurt-based sweet drink with fresh mango pulp.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -154,6 +210,11 @@
             <div class="footer-col">
                 <h3>Royal <span>Spice</span></h3>
                 <p>Authentic Flavors, Royal Experience.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.48-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.54-4.5-10.02-10-10.02z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25zM12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a>
+                    <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></a>
+                </div>
             </div>
             <div class="footer-col">
                 <h3>Quick Links</h3>
@@ -163,6 +224,11 @@
                     <li><a href="about.html" style="color: var(--text-muted); transition: color 0.3s;">About Us</a></li>
                     <li><a href="contact.html" style="color: var(--text-muted); transition: color 0.3s;">Contact</a></li>
                 </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Opening Hours</h3>
+                <p>Mon-Fri: 11:00 AM - 11:00 PM</p>
+                <p>Sat-Sun: 11:00 AM - 12:00 AM</p>
             </div>
             <div class="footer-col">
                 <h3>Contact Info</h3>
